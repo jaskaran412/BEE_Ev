@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oud & Amber | Fragrance Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="announcement">
+        FREE SHIPPING ON ORDERS ABOVE ₹1,999
+    </div>
+
+    <header class="header">
+        <a href="#" class="brand">OUD <span>&</span> AMBER</a>
+
+        <div class="search-box">
+            <span>⌕</span>
+            <input type="search" id="search" placeholder="Search perfumes and attars..." oninput="renderProducts()">
+        </div>
+
+        <div class="nav-actions">
+            <a href="#shop">Shop</a>
+            <button class="cart-button" onclick="toggleCart(true)">
+                Bag <span id="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <p class="eyebrow">THE ART OF FRAGRANCE</p>
+                <h1>Find your<br><span>signature scent.</span></h1>
+                <p class="hero-description">
+                    Discover captivating perfumes and timeless attars
+                    for every mood and moment.
+                </p>
+                <a href="#shop" class="primary-button">Explore Collection →</a>
+            </div>
+
+            <div class="hero-image">
+                <img
+                    src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=900&q=80"
+                    alt="Elegant fragrance collection"
+                >
+            </div>
+        </section>
+
+        <section class="shop-section" id="shop">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">OUR COLLECTION</p>
+                    <h2>Shop fragrances</h2>
+                </div>
+                <p id="product-count">8 products</p>
+            </div>
+
+            <div class="shop-controls">
+                <div class="categories">
+                    <button class="category-button active" data-category="All" onclick="setCategory('All')">All</button>
+                    <button class="category-button" data-category="Perfumes" onclick="setCategory('Perfumes')">Perfumes</button>
+                    <button class="category-button" data-category="Attars" onclick="setCategory('Attars')">Attars</button>
+                </div>
+
+                <select id="sort" onchange="renderProducts()">
+                    <option value="default">Featured</option>
+                    <option value="low">Price: Low to High</option>
+                    <option value="high">Price: High to Low</option>
+                </select>
+            </div>
+
+            <div class="product-grid" id="product-grid"></div>
+        </section>
+
+        <section class="brand-note">
+            <h2>A fragrance for every story.</h2>
+            <p>From modern perfumes to traditional attars, discover a scent that feels uniquely yours.</p>
+        </section>
+    </main>
+
+    <footer>
+        <a href="#" class="brand">OUD <span>&</span> AMBER</a>
+        <p>Discover your signature scent.</p>
+        <small>© 2026 OUD & AMBER</small>
+    </footer>
+
+    <div class="cart-overlay" id="cart-overlay" onclick="toggleCart(false)"></div>
+
+    <aside class="cart-panel" id="cart-panel">
+        <div class="cart-header">
+            <div>
+                <p class="eyebrow">YOUR SELECTION</p>
+                <h2>Your Bag <span id="bag-count">(0)</span></h2>
+            </div>
+            <button class="close-button" onclick="toggleCart(false)">×</button>
+        </div>
+
+        <div class="cart-items" id="cart-items"></div>
+
+        <div class="cart-footer">
+            <div class="total-row">
+                <span>Subtotal</span>
+                <strong id="cart-total">₹0</strong>
+            </div>
+            <p class="shipping-message">Shipping calculated at checkout.</p>
+            <button class="primary-button checkout-button" onclick="checkout()">Continue to Checkout →</button>
+        </div>
+    </aside>
+
+    <script src="script.js"></script>
+</body>
+</html>
